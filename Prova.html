@@ -1,0 +1,87 @@
+<html lang="en">
+<head>
+
+    <link rel="stylesheet" type="text/css" href="prova.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <ul>
+
+            <li>
+                <a href="#home" class="dot active" data-scroll="home">
+                    <span>home</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="#about" class="dot" data-scroll="about">
+                    <span>about</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="#service" class="dot" data-scroll="service">
+                    <span>service</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="#project" class="dot" data-scroll="project">
+                    <span>project</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="#contact" class="dot" data-scroll="contact">
+                    <span>contact</span>
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+    <section class="sec" id="home">home</section>
+    <section class="sec" id="about">about</section>
+    <section class="sec" id="service">service</section>
+    <section class="sec" id="project">project</section>
+    <section class="sec" id="contact">contact</section>
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $(window).on('scroll', function () {
+
+                var link = $('.navbar a.dot');
+                var top = $(window).scrollTop();
+
+                $('.sec').each(function () {
+                    var id = $(this).attr('id');
+                    var height = $(this).height();
+                    var offset = $(this).offset().top - 150;
+                    if (top >= offset && top < offset + height) {
+                        link.removeClass('active');
+                        $('.navbar').find('[data-scroll="' + id + '"]').addClass('active');
+                    }
+                });
+
+            });
+
+        });
+
+
+    </script>
+
+</body>
+
+</html>
