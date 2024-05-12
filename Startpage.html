@@ -3,23 +3,14 @@
     <title>HISTORY OF DUOMO</title>
     <link rel="stylesheet" type="text/css" href="startpage.css">
 
-<script>
-    function redirectToNewPage() {
-
-        window.location.replace("Index.html");
-    
-    }
-</script>
 
 </head>
 <body>
     <div class="gradient-overlay">
 
-
-            <div class="main__container" onclick="redirectToNewPage()">
+            <div class="main__container">
                 <div class="main__content">
-                    <h1>Tracce del passato di Como</h1>
-                    <h2>DUOMO DI COMO</h2>
+                    <h1>DUOMO DI COMO</h1>
                     <p>Un tuffo nel passato, senza lasciare il presente.</p>
 
 
@@ -33,4 +24,20 @@
             </div>
         
     </div>
+<script>
+
+        window.onscroll = function () {
+                if (window.scrollY > 50) { 
+                    window.location.replace("Index.html"); 
+                }
+            };
+
+
+            
+
+
+
+</script>
+
+
 </body>
