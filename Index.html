@@ -17,18 +17,18 @@
 		<div class="header__container">
 
 			<div class="logo__container">
-				<img src="milan-cathedral.svg" style="border-left: 10px;"/>
+				<img src="milan-cathedral.svg" style="border-left: 10px;" alt=""/>
 				<a href="Startpage.html" id="header__logo">DUOMO</a>
 			</div>
 			<ul class="header__menu">
 				<li class="header__item">
-					<a href="Index.html" class="header__links" style="text-decoration: underline #FB8500;">Storia</a>
+					<a href="Index.html" class="header__links" id="head1">Storia</a>
 				</li>
 				<li class="header__item">
-					<a href="Arc.html" class="header__links">Architettura</a>
+					<a href="Arc.html" class="header__links" id="head2">Architettura</a>
 				</li>
 				<li class="header__item">
-					<a href="#" class="header__links">Curiosità</a>
+					<a href="#" class="header__links" id="head3">Curiosità</a>
 				</li>
 			</ul>
 		</div>
@@ -40,17 +40,17 @@
 	<nav class="navbar">
 		<ul>
 			<li>
-				<a href="#home" class="dot active" data-scroll="intro" >
+				<a href="#intro" class="dot active" data-scroll="intro" >
 					<span>Introduzione</span>
 				</a>
 			</li>
 			<li>
-				<a href="#about" class="dot" data-scroll="storia" >
+				<a href="#storia" class="dot" data-scroll="storia" >
 					<span>Storia</span>
 				</a>
 			</li>
 			<li>
-				<a href="#service" class="dot" data-scroll="curiosità">
+				<a href="#curiosità" class="dot" data-scroll="curiosità">
 					<span>Curiosità</span>
 				</a>
 			</li>
@@ -62,7 +62,7 @@
 		<section class="sec" id="intro">
 
 			<div class="img__container">
-			<img class="image" src="Duomo.png"/>
+			<img class="image" src="DuomoAi.png" alt=""/>
 		</div>
 
 		<div class="text__container">
@@ -163,57 +163,7 @@
 	</div>
 
 	<!-- Scripts -->
-	<script>
-
-		/*Underline function*/
-
-		document.addEventListener('DOMContentLoaded', function () {
-				var classes = ['header__links'];
-				classes.forEach(function (className) {
-					var elements = document.getElementsByClassName(className);
-					for (var i = 0; i < elements.length; i++) {
-						elements[i].addEventListener('click', function (event) {
-							event.preventDefault();
-
-							for (var j = 0; j < elements.length; j++) {
-								elements[j].style.textDecoration = 'none';
-							}
-							window.location.href = this.href;
-
-							this.style.textDecoration = 'underline';
-							this.style.textDecorationColor = '#FB8500';
-							
-						});
-					}
-				});
-			});
-
-		/* Navbar */
-		document.addEventListener('DOMContentLoaded', function () {
-			var links = document.querySelectorAll('.navbar a.dot');
-			var sections = document.querySelectorAll('.sec');
-
-			function setActiveLink() {
-				var top = window.pageYOffset;
-
-				sections.forEach(function (section) {
-					var id = section.getAttribute('id');
-					var height = section.offsetHeight;
-					var offset = section.offsetTop - 150;
-
-					if (top >= offset && top < offset + height) {
-						links.forEach(function (link) {
-							link.classList.remove('active');
-						});
-						document.querySelector('.navbar').querySelector('[data-scroll="' + id + '"]').classList.add('active');
-					}
-				});
-			}
-
-			window.addEventListener('scroll', setActiveLink);
-		});
-
-	</script>
+	<script src="Index.js"></script>
 </body>
 
 </html>
