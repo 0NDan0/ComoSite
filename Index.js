@@ -23,7 +23,6 @@ document.addEventListener('DOMContentLoaded', function () {     //Funzione per l
 		});
 
 
-        
 let nextBtn = document.querySelector('.next')       //Funzione per lo slider
 let prevBtn = document.querySelector('.prev')
 
